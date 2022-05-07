@@ -5,6 +5,8 @@ import { Grid, TablePagination, TextField, Typography } from "@mui/material";
 import FilterOptions from "../../components/FilterOptions";
 import Card from "../../components/Card";
 import Loader from "../../components/Loader";
+import SearchIcon from "@mui/icons-material/Search";
+
 const applyPagination = (launches, page, limit) => {
   return launches.slice(page * limit, page * limit + limit);
 };
@@ -119,14 +121,21 @@ const Result = () => {
     <div>
       <Grid container mt={5} justifyContent="space-between">
         <Grid item>
-          <TextField
-            fullWidth
-            id="standard-basic"
-            label="Search by rocket name"
-            variant="standard"
-            onChange={handleQueryChange}
-            value={query}
-          />
+          <Grid container spacing={1} alignItems="flex-end">
+            <Grid item>
+              <SearchIcon color="red" />
+            </Grid>
+            <Grid item>
+              <TextField
+                fullWidth
+                id="standard-basic"
+                label="Search by rocket name"
+                variant="standard"
+                onChange={handleQueryChange}
+                value={query}
+              />
+            </Grid>
+          </Grid>
         </Grid>
         <Grid>
           <FilterOptions handleFilter={handleFilter} />
