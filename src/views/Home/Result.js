@@ -154,10 +154,11 @@ const Result = () => {
             component="div"
             count={launches.length}
             onPageChange={handlePageChange}
-            onChangeRowsPerPage={handleLimitChange}
+            onRowsPerPageChange={handleLimitChange}
             page={page}
             rowsPerPage={limit}
-            rowsPerPageOptions={[5, 10, 25]}
+            labelRowsPerPage="Rows Per Page"
+            rowsPerPageOptions={[3, 6, 9, 12]}
           />
         </>
       ) : (
