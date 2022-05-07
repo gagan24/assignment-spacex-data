@@ -1,5 +1,4 @@
 import * as React from "react";
-import Box from "@mui/material/Box";
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
@@ -24,7 +23,11 @@ export default function BasicCard({ launch }) {
         </Typography>
       </CardContent>
       <CardActions>
-        <a href={launch.links.article_link} target="_blank">
+        <a
+          href={launch.links.article_link}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <Button variant="outlined" size="small">
             Read More
           </Button>

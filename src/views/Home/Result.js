@@ -76,8 +76,6 @@ const Result = () => {
     dispatch(fetchLaunches());
   }, [dispatch]);
 
-  console.log("launches: ", launches);
-
   const handlePageChange = (event, newPage) => {
     setPage(newPage);
   };
