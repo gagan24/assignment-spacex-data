@@ -144,7 +144,7 @@ const Result = () => {
           <Grid container spacing={3}>
             {paginatedLaunches.map((launch, index) => {
               return (
-                <Grid key={index} mt={5} item xs={4} sm={4} md={4}>
+                <Grid key={index} mt={5} item xs={12} sm={6} md={4}>
                   <Card launch={launch} />
                 </Grid>
               );
