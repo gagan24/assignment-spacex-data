@@ -12,7 +12,7 @@ export default function FilterOptions({ handleFilter }) {
       sx={{ width: 200 }}
       onChange={handleFilter}
       renderInput={(params) => (
-        <TextField {...params} label="Sort Options" variant="standard" />
+        <TextField {...params} label="Filters" variant="standard" />
       )}
     />
   );
