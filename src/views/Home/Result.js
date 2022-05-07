@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { fetchLaunches, launchesSelector } from "../../slices/launches";
+import React, { useState } from "react";
+
 import { Grid, TablePagination, TextField, Typography } from "@mui/material";
 import FilterOptions from "../../components/FilterOptions";
 import Card from "../../components/Card";
@@ -62,19 +61,11 @@ const applyFilters = (launches, filter) => {
   });
 };
 
-const Result = () => {
+const Result = ({ launches, loading, hasErrors }) => {
   const [page, setPage] = useState(0);
   const [limit, setLimit] = useState(9);
   const [query, setQuery] = useState("");
   const [filter, setFilter] = useState(null);
-
-  const dispatch = useDispatch();
-
-  const { launches, loading, hasErrors } = useSelector(launchesSelector);
-
-  useEffect(() => {
-    dispatch(fetchLaunches());
-  }, [dispatch]);
 
   const handlePageChange = (event, newPage) => {
     setPage(newPage);
